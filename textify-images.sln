@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextifyLibrary", "TextifyLibrary\TextifyLibrary.csproj", "{77DD344C-439C-4CAF-965D-9E5C285140BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextifyLibrary", "TextifyLibrary\TextifyLibrary.csproj", "{77DD344C-439C-4CAF-965D-9E5C285140BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "textify-images", "textify-images\textify-images.csproj", "{3017D72C-DB6D-43C5-81AA-5604D4F0F867}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextifyImages", "TextifyImages\TextifyImages.csproj", "{F7770DE5-D927-4FD2-A32B-026827D266F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,18 +29,18 @@ Global
 		{77DD344C-439C-4CAF-965D-9E5C285140BE}.Release|x64.Build.0 = Release|Any CPU
 		{77DD344C-439C-4CAF-965D-9E5C285140BE}.Release|x86.ActiveCfg = Release|Any CPU
 		{77DD344C-439C-4CAF-965D-9E5C285140BE}.Release|x86.Build.0 = Release|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Debug|x64.Build.0 = Debug|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Debug|x86.Build.0 = Debug|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Release|x64.ActiveCfg = Release|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Release|x64.Build.0 = Release|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Release|x86.ActiveCfg = Release|Any CPU
-		{3017D72C-DB6D-43C5-81AA-5604D4F0F867}.Release|x86.Build.0 = Release|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Debug|x64.Build.0 = Debug|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Release|x64.ActiveCfg = Release|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Release|x64.Build.0 = Release|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{F7770DE5-D927-4FD2-A32B-026827D266F2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
