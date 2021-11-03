@@ -28,11 +28,7 @@ private:
 
   void onWorkCompleted();
 
-  //  QImage composeDivide(const QImage &first, const QImage &second);
-
   void composeDivide(const QImage &first, QImage &second);
-
-  //  QImage applyBlur(const QImage &image);
 
   void applyBlur(const QImage &image, QImage &output);
 };

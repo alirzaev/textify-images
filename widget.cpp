@@ -1,5 +1,6 @@
 #include <algorithm>
 
+#include <QDesktopServices>
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -7,11 +8,13 @@
 #include <QGraphicsBlurEffect>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
+#include <QImageReader>
 #include <QMessageBox>
 #include <QPainter>
 #include <QPixmap>
 #include <QRunnable>
 #include <QString>
+#include <QTemporaryDir>
 #include <QtConcurrent>
 
 #include "ui_widget.h"
@@ -55,7 +58,15 @@ void Widget::loadImages() {
 }
 
 void Widget::convertImages() {
-  auto dir = QFileDialog::getExistingDirectory(this);
+  QTemporaryDir tmpDir;
+  tmpDir.setAutoRemove(false);
+  QString dir;
+
+  if (tmpDir.isValid()) {
+    dir = tmpDir.path();
+  } else {
+    dir = QFileDialog::getExistingDirectory(this);
+  }
 
   bool grayscale = ui->grayscaleCheck->isChecked();
 
@@ -68,7 +79,10 @@ void Widget::convertImages() {
         auto baseName = QFileInfo(image).fileName();
         auto path = QDir::toNativeSeparators(dir + "/" + baseName);
 
-        QImage input(image);
+        QImageReader reader(image);
+        reader.setAutoTransform(true);
+
+        QImage input = reader.read();
         QImage output(input.size(), input.format());
 
         applyBlur(input, output);
@@ -86,6 +100,8 @@ void Widget::convertImages() {
           });
   connect(watcher, &QFutureWatcher<void>::finished, this,
           &Widget::onWorkCompleted);
+  connect(watcher, &QFutureWatcher<void>::finished, this,
+          [dir]() { QDesktopServices::openUrl("file:///" + dir); });
   watcher->setFuture(future);
 }
 
