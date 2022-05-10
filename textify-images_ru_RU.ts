@@ -24,12 +24,22 @@
         <translation>Обработать</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="114"/>
+        <location filename="widget.cpp" line="50"/>
+        <source>Select images</source>
+        <translation>Выбрать изображения</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="76"/>
+        <source>Select folder</source>
+        <translation>Выбрать папку</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="123"/>
         <source>Processing</source>
         <translation>Конвертирование</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="114"/>
+        <location filename="widget.cpp" line="123"/>
         <source>Done!</source>
         <translation>Готово!</translation>
     </message>

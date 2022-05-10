@@ -13,6 +13,7 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QRunnable>
+#include <QStandardPaths>
 #include <QString>
 #include <QTemporaryDir>
 #include <QtConcurrent>
@@ -43,7 +44,11 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget) {
 Widget::~Widget() { delete ui; }
 
 void Widget::loadImages() {
-  auto files = QFileDialog::getOpenFileNames(this);
+  auto locations =
+      QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+  auto files = QFileDialog::getOpenFileNames(
+      this, tr("Select images"),
+      locations.empty() ? QDir::homePath() : locations.first());
   if (files.isEmpty()) {
     return;
   }
@@ -65,7 +70,11 @@ void Widget::convertImages() {
   if (tmpDir.isValid()) {
     dir = tmpDir.path();
   } else {
-    dir = QFileDialog::getExistingDirectory(this);
+    auto location =
+        QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+    dir = QFileDialog::getExistingDirectory(
+        this, tr("Select folder"),
+        location.isEmpty() ? QDir::homePath() : location);
   }
 
   bool grayscale = ui->grayscaleCheck->isChecked();
