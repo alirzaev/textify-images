@@ -127,18 +127,56 @@ void Widget::composeDivide(const QImage &first, QImage &second) {
 }
 
 void Widget::applyBlur(const QImage &image, QImage &output) {
+  const auto width = image.width();
+  const auto height = image.height();
+  const qreal radius = 100;
+
+  QImage extended(width + radius * 2, height + radius * 2, image.format());
+  extended.fill(Qt::transparent);
+
+  QImage mirroredV = image.mirrored();
+  QImage mirroredH = image.mirrored(true, false);
+  QImage mirroredHV = image.mirrored(true, true);
+
+  QVector<std::pair<QPointF, QImage>> drawings{
+      // draw center image
+      {{radius, radius}, image},
+
+      // draw top mirrored
+      {{radius, radius - height}, mirroredV},
+      // draw bottom mirrored
+      {{radius, radius + height}, mirroredV},
+      // draw left mirrored
+      {{radius - width, radius}, mirroredH},
+      // draw right mirrored
+      {{radius + width, radius}, mirroredH},
+
+      // draw top left mirrored
+      {{radius - width, radius - height}, mirroredHV},
+      // draw top right mirrored
+      {{radius + width, radius - height}, mirroredHV},
+      // draw bottom left mirrored
+      {{radius - width, radius + height}, mirroredHV},
+      // draw bottom right mirrored
+      {{radius + width, radius + height}, mirroredHV}};
+  QPainter painterExt(&extended);
+  for (const auto &drawing : drawings) {
+    painterExt.drawImage(drawing.first, drawing.second);
+  }
+
   auto *effect = new QGraphicsBlurEffect();
-  effect->setBlurRadius(100);
+  effect->setBlurRadius(radius);
 
   auto *item = new QGraphicsPixmapItem();
-  item->setPixmap(QPixmap::fromImage(image));
+  item->setPixmap(QPixmap::fromImage(extended));
   item->setGraphicsEffect(effect);
 
   QGraphicsScene scene;
   scene.addItem(item);
 
-  output.fill(Qt::transparent);
+  QImage result(width, height, image.format());
+  result.fill(Qt::transparent);
 
-  QPainter painter(&output);
-  scene.render(&painter, QRectF(), QRectF(0, 0, image.width(), image.height()));
+  QPainter painterRes(&output);
+  scene.render(&painterRes, QRectF(), QRectF(radius, radius, width, height));
 }
