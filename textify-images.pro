@@ -18,3 +18,8 @@ HEADERS += \
 
 FORMS += \
         widget.ui
+
+TRANSLATIONS += \
+    textify-images_ru_RU.ts
+CONFIG += lrelease
+CONFIG += embed_translations

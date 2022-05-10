@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Обработка фотографий с текстом</string>
+   <string>Processing photos with text</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -24,21 +24,21 @@
        <item>
         <widget class="QPushButton" name="importImages">
          <property name="text">
-          <string>Выбрать...</string>
+          <string>Select...</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="grayscaleCheck">
          <property name="text">
-          <string>Черно-белое</string>
+          <string>Grayscaled</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="convertImages">
          <property name="text">
-          <string>Обработать</string>
+          <string>Process</string>
          </property>
         </widget>
        </item>

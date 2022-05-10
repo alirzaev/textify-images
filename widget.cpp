@@ -111,7 +111,7 @@ void Widget::onWorkCompleted() {
   ui->grayscaleCheck->setDisabled(false);
   ui->progressBar->setValue(0);
 
-  QMessageBox::information(this, "Конвертирование", "Готово!");
+  QMessageBox::information(this, tr("Processing"), tr("Done!"));
 }
 
 void Widget::composeDivide(const QImage &first, QImage &second) {
