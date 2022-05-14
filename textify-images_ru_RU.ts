@@ -2,44 +2,47 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
-    <name>Widget</name>
+    <name>Backend</name>
     <message>
-        <location filename="widget.ui" line="14"/>
-        <source>Processing photos with text</source>
-        <translation>Обработка фотографий с текстом</translation>
-    </message>
-    <message>
-        <location filename="widget.ui" line="27"/>
-        <source>Select...</source>
-        <translation>Выбрать...</translation>
-    </message>
-    <message>
-        <location filename="widget.ui" line="34"/>
-        <source>Grayscaled</source>
-        <translation>Чёрно-белое</translation>
-    </message>
-    <message>
-        <location filename="widget.ui" line="41"/>
-        <source>Process</source>
-        <translation>Обработать</translation>
-    </message>
-    <message>
-        <location filename="widget.cpp" line="50"/>
+        <location filename="backend.cpp" line="25"/>
         <source>Select images</source>
         <translation>Выбрать изображения</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="76"/>
+        <location filename="backend.cpp" line="46"/>
         <source>Select folder</source>
         <translation>Выбрать папку</translation>
     </message>
+</context>
+<context>
+    <name>main</name>
     <message>
-        <location filename="widget.cpp" line="123"/>
+        <location filename="main.qml" line="10"/>
+        <source>Processing photos with text</source>
+        <translation>Обработка фотографий с текстом</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="45"/>
+        <source>Select...</source>
+        <translation>Выбрать...</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="51"/>
+        <source>Grayscaled</source>
+        <translation>Чёрно-белое</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="56"/>
+        <source>Process</source>
+        <translation>Обработать</translation>
+    </message>
+    <message>
+        <location filename="main.qml" line="77"/>
         <source>Processing</source>
         <translation>Конвертирование</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="123"/>
+        <location filename="main.qml" line="78"/>
         <source>Done!</source>
         <translation>Готово!</translation>
     </message>
